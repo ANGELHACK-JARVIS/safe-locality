@@ -107,20 +107,7 @@ def demo():
             newDict[k[0]] = cord
     conn = mysql.connect()
     cursor = conn.cursor()
-    place=[]
-    lat=[]
-    lon=[]
-    k=0
-    print newDict
-    for i in newDict:
-        place.append(i)
-        lat.append(float(newDict[i][0])) 
-        lon.append(float(newDict[i][1])) 
-    #cursor.callproc('sp_addLoc',('dfsd',12.12,12.1234,))
-    for i in range(0,len(place)):
-        cursor.callproc('sp_addLoc',(place[i],lat[i],lon[i]))
-    cursor.execute("DELETE FROM Coordinates WHERE Loc_id>140")
-    cursor.execute("SELECT Loc_name FROM Coordinates")
+    cursor.execute("SELECT Loc_name FROM Coordinates ORDER BY Loc_name DESC")
     data = cursor.fetchall()
     print data
     conn.commit()

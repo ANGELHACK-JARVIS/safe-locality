@@ -129,3 +129,66 @@ ul#cardList {
 ul#cardList li {
     display:inline;
 }
+
+.tagline {
+    font-style: italic;
+    color: #FFF;
+    font-size: 0.875em; /* 14 / 16  */
+    float: right;
+    margin-top: 2em;
+}
+
+.navigation-outer {
+    background: #212121;
+}
+
+.site-navigation {
+    float: left;
+}
+
+.site-navigation li {
+    display: inline-block;
+}
+
+.site-navigation a {
+    display: block;
+    text-decoration: none;
+    color: #FFF;
+    padding: 0.2em 0.8em;
+    margin: 0.8em 0;
+}
+
+.site-navigation a:hover {
+    opacity: 0.7;
+}
+
+.site-navigation a.active {
+    background: #FFF;
+    color: #00a0b0;
+}
+
+.site-search {
+    float: right;
+}
+
+.search-field {
+    background: #FFF;
+    padding: 0.2em;
+    margin: 0.8em 0;
+    border-radius: 1em;
+}
+
+.search-field input {
+    background: transparent;
+    border: 0;
+    width: 9em;
+    font-size: 0.875em;  /* 14 / 16 */
+    padding: 0.2em 0.4em;
+}
+
+.search-field button {
+    background: transparent url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/138788/icon_search_small.png) no-repeat center center;
+    border: 0;
+    width: 2em;
+    height: 1.5em;
+}

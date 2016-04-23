@@ -642,3 +642,11 @@ fieldset.group .field:last-child {
     overflow: hidden;
 }
 
+#logout-button{
+
+    float: right;
+    overflow: hidden;
+    margin: 30px 0px 0px 0px;
+    border-radius: 5px;
+    padding: 7px 7px 7px 7px;
+}
