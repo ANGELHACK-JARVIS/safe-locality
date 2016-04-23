@@ -2,8 +2,11 @@
 from flask import Flask, render_template, json, request, redirect, session
 from flask.ext.mysql import MySQL
 from werkzeug import generate_password_hash, check_password_hash
+from flask_googlemaps import GoogleMaps
+from flask_googlemaps import Map
 
 app = Flask(__name__)
+GoogleMaps(app)
 app.secret_key = 'ssh...Big secret!'
 #MySQL configurations
 
@@ -94,7 +97,20 @@ def validateLogin():
 @app.route('/userHome')
 def userHome():
     if session.get('user'):
-        return render_template('userHome.html')
+        mymap = Map(
+        identifier="view-side",
+        lat=37.4419,
+        lng=-122.1419,
+        markers=[(37.4419, -122.1419)]
+        )
+        sndmap = Map(
+            identifier="sndmap",
+            lat=37.4419,
+            lng=-122.1419,
+            markers={'http://maps.google.com/mapfiles/ms/icons/green-dot.png':[(37.4419, -122.1419)],
+                     'http://maps.google.com/mapfiles/ms/icons/blue-dot.png':[(37.4300, -122.1400)]}
+        )
+        return render_template('userHome.html', mymap=mymap, sndmap=sndmap)
     else:
         return render_template('error.html',error = 'Unauthorized Access')
 
