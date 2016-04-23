@@ -66,4 +66,43 @@ IN p_useremail VARCHAR(255)
 BEGIN
     select * from User where Useremail = p_useremail;
 END$$
-DELIMITER ;
+DELIMITER;
+
+--Coordinates Table
+
+CREATE TABLE Coordinates(
+    Loc_id BIGINT NULL AUTO_INCREMENT,
+    Loc_name VARCHAR(255),
+    Loc_lat Float,
+    Loc_long Float,
+    PRIMARY KEY (`Loc_id`)
+);
+
+CREATE TABLE LifeStyle(
+    UserId BIGINT NULL,
+    Loc_id BIGINT NULL,
+    Water INT NULL,
+    Electricity  INT NULL,
+    Network_Availability  INT NULL,
+    Cleanliness  INT NULL,
+    Green_space  INT NULL,
+    Local_Entertainment  INT NULL,
+    NightLife INT NULL,
+    Repairmen_avail  INT NULL,
+    Education  INT NULL,
+    Neighbourhood INT NULL,
+    PRIMARY KEY(`UserId`),
+    FOREIGN KEY(UserId) REFERENCES User(UserId),
+    FOREIGN KEY(Loc_id) REFERENCES Coordinates(Loc_id)
+);
+
+CREATE TABLE Security(
+    UserId BIGINT NULL,
+    Loc_id BIGINT NULL,
+    Theft BIGINT NULL,
+    Violence BIGINT NULL,
+    Harassment BIGINT NULL,
+    PRIMARY KEY(`UserId`),
+    FOREIGN KEY(UserId) REFERENCES User(UserId),
+    FOREIGN KEY(Loc_id) REFERENCES Coordinates(Loc_id)  
+);

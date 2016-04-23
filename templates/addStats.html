@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Localize</title>
+
+
+    <link href="../static/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+
+    <script src="../static/js/jquery-2.2.1.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Add Locale Details</a>
+                    </li>
+                    <li role="presentation"><a href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Localize</h3>
+        </div>
+        <section>
+            <form class="form-horizontal" method="post" action="/addStats">
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Add Your Movie</legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle">Title</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputTitle" type="text" placeholder="" class="form-control input-md" required="true">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle">Release Year</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputReleaseYear" type="text" placeholder="" class="form-control input-md" required="true">
+                        </div>
+                    </div>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtPost">Synopsis</label>
+                        <div class="col-md-4">
+                            <textarea class="form-control" id="txtPost" name="inputSynopsis"  maxlength="300" required="true"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle">Movie Length</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputMovieLength" type="text" placeholder="" class="form-control input-md" required="true">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle">Genre</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputGenre" type="text" placeholder="" class="form-control input-md" required="true">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle">Director Name 1</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputDirectorFirstName1" type="text" placeholder="first name" class="form-control input-md" required="true">
+                            <input id="txtTitle" name="inputDirectorLastName1" type="text" placeholder="last name" class="form-control input-md" required="true">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle">Director Name 2</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputDirectorFirstName2" type="text" placeholder="first name" class="form-control input-md">
+                            <input id="txtTitle" name="inputDirectorLastName2" type="text" placeholder="last name" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle">Actor/Actress Name 1</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputActorFirstName1" type="text" placeholder="first name" class="form-control input-md">
+                            <input id="txtTitle" name="inputActorLastName1" type="text" placeholder="last name" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle">Actor/Actress Name 2</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputActorFirstName2" type="text" placeholder="first name" class="form-control input-md">
+                            <input id="txtTitle" name="inputActorLastName2" type="text" placeholder="last name" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle">Actor/Actress Name 3</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputActorFirstName3" type="text" placeholder="first name" class="form-control input-md">
+                            <input id="txtTitle" name="inputActorLastName3" type="text" placeholder="last name" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle">Actor/Actress Name 4</label>
+
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputActorFirstName4" type="text" placeholder="first name" class="form-control input-md">
+                            <input id="txtTitle" name="inputActorLastName4" type="text" placeholder="last name" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="txtTitle">Actor/Actress Name 5</label>
+                        <div class="col-md-4">
+                            <input id="txtTitle" name="inputActorFirstName5" type="text" placeholder="first name" class="form-control input-md">
+                            <input id="txtTitle" name="inputActorLastName5" type="text" placeholder="last name" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="singlebutton"></label>
+                        <div class="col-md-4">
+                            <input id="singlebutton" name="singlebutton" class="btn btn-primary" type="submit" value="Publish" />
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+
+        </section>
+        <footer class="footer">
+            <p>&copy; Movie Company 2016</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

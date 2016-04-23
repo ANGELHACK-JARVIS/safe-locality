@@ -1,0 +1,20 @@
+1. Form Fields (Lifestyle)
+	
+	a) Choose your city
+	b) Choose your locale
+	c) Water
+	d) Electricity
+	e) Network Availability
+	f) Cleanliness
+	g) Green space
+	h) Local Entertainment centers(Malls/Restaurants/GameHubs)
+	i) NightLife
+	j) Availability of Repairmen/Plumbers/Cobblers/Laundry
+	h) Education 
+	i) Neighbourhood
+
+2. Form Fields (Security)
+	
+	a) 	Theft
+	b) 	Violence
+	c)	Harassment

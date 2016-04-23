@@ -13,7 +13,7 @@ app.secret_key = 'ssh...Big secret!'
 mysql = MySQL()
 
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'utkarsh@mit'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'tekken5'
 app.config['MYSQL_DATABASE_DB'] = 'safelocality'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
