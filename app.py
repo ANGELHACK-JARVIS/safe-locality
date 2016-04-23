@@ -78,11 +78,11 @@ def validateLogin():
         cursor = con.cursor()
         cursor.callproc('sp_validateLogin',(_username,))
         data = cursor.fetchall()
-
         if len(data) > 0:
             if check_password_hash(str(data[0][5]),_password):
                 session['user'] = data[0][0]
-                return redirect('/showDemo')
+                print "here"
+                return redirect('/dashboard')
             else:
                 return render_template('error.html',error = 'Wrong Email address or Password.')
         else:
@@ -93,7 +93,7 @@ def validateLogin():
     finally:
         cursor.close()
         con.close()
-@app.route('/showDemo')
+@app.route('/dashboard')
 def demo():
     newDict = {}
     with open('Places.txt','r') as lines:
@@ -108,6 +108,7 @@ def demo():
     lat=[]
     lon=[]
     k=0
+    print newDict
     for i in newDict:
         place.append(i)
         lat.append(float(newDict[i][0])) 
@@ -115,15 +116,31 @@ def demo():
     #cursor.callproc('sp_addLoc',('dfsd',12.12,12.1234,))
     for i in range(0,len(place)):
         cursor.callproc('sp_addLoc',(place[i],lat[i],lon[i]))
-    cursor.execute("DELETE  FROM Coordinates WHERE Loc_id>36")
+    cursor.execute("DELETE FROM Coordinates WHERE Loc_id>140")
     cursor.execute("SELECT Loc_name FROM Coordinates")
     data = cursor.fetchall()
     print data
     conn.commit()
     cursor.close()
     conn.close()
-    return render_template('demo.html',data=data)
+    print "here I am"
+    return render_template('dashboard.html', data = data)
 
+
+@app.route('/places/<place_name>/')
+def places(place_name):
+    if session.get('user'):
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM Coordinates WHERE Loc_name = %s", (place_name))
+        data = cursor.fetchall()
+        print data
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return render_template('demo.html',data = data)
+    else:
+        return render_template('error.html',error = 'Unauthorized Access')
 @app.route('/userHome')
 def userHome():
     if session.get('user'):
