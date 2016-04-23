@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>safe Locality</title>
+
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link href="../static/signup.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Localize</h3>
+        </div>
+
+       {% for x in data %}
+        <div class="list-group">
+        <div class="list-group-item active">
+        <div class="row">
+            <div class="col-sm-4"><h4 class="text-left">Place {{loop.index}} :</h4></div>
+            <div class="col-sm-4"><h4>{{x[0]}}</h4></div>
+            </a>
+       </div>
+        </div>
+        </div>
+        {% endfor %}
+
+
+
+        <footer class="footer">
+            <p>&copy; Company 2015</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

@@ -106,3 +106,111 @@ CREATE TABLE Security(
     FOREIGN KEY(UserId) REFERENCES User(UserId),
     FOREIGN KEY(Loc_id) REFERENCES Coordinates(Loc_id)  
 );
+
+--addStats PROCEDURE Lifestyle
+
+DROP procedure IF EXISTS `sp_addStats`;
+DELIMITER $$
+CREATE PROCEDURE `sp_addStats`(
+    IN p_userid INT,
+    IN p_locid INT,
+    IN p_water INT,
+    IN p_electricty INT,
+    IN p_network_availability INT,
+    IN p_cleanliness INT,
+    IN p_greenspace INT,
+    IN p_local_Entertainment INT,
+    IN p_nightlife INT,
+    IN p_repairmen_avail INT,
+    IN p_education INT,
+    IN p_neighbourhood INT
+)
+BEGIN
+    insert into safelocality (
+        UserId,
+        Loc_id,
+        Water,
+        Electricity,
+        Network_Availability,
+        Cleanliness,
+        Green_space,
+        Local_Entertainment,
+        NightLife,
+        Repairmen_avail,
+        Education,
+        Neighbourhood
+    )
+    values
+    (
+        p_userid,
+        p_locid,
+        p_water,
+        p_electricty,
+        p_network_availability,
+        p_cleanliness,
+        p_greenspace,
+        p_local_Entertainment,
+        p_nightlife,
+        p_repairmen_avail,
+        p_education,
+        p_neighbourhood
+    );
+END$$
+
+DELIMITER ;
+;
+
+--addStats Security PROCEDURE
+DROP procedure IF EXISTS `sp_addStats_sec`;
+DELIMITER $$
+CREATE PROCEDURE `sp_addStats_sec`(
+    IN p_userid INT,
+    IN p_locid INT,
+    IN p_theft INT,
+    IN p_violence INT,
+    IN p_harassment INT
+)
+BEGIN
+    insert into safelocality(
+        UserId,
+        Loc_id,
+        Theft,
+        Violence,
+        Harassment
+        )
+    values
+    (
+        p_userid,
+        p_locid,
+        p_theft,
+        p_violence,
+        p_harassment
+    );
+END$$
+DELIMITER ;
+;
+
+--add Location 
+DELIMITER $$
+DROP procedure IF EXISTS `sp_addLoc`;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_addLoc`(
+    IN p_locname VARCHAR(255),
+    IN p_lat  Float,
+    IN p_lon  Float
+)
+BEGIN
+
+        insert into Coordinates
+        (
+            Loc_name,
+            Loc_lat,
+            Loc_long
+        )
+        values
+        (
+            p_locname,
+            p_lat,
+            p_lon
+        );
+END$$
+DELIMITER ;

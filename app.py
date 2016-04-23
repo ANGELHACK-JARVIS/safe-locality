@@ -82,7 +82,7 @@ def validateLogin():
         if len(data) > 0:
             if check_password_hash(str(data[0][5]),_password):
                 session['user'] = data[0][0]
-                return redirect('/userHome')
+                return redirect('/showDemo')
             else:
                 return render_template('error.html',error = 'Wrong Email address or Password.')
         else:
@@ -93,6 +93,36 @@ def validateLogin():
     finally:
         cursor.close()
         con.close()
+@app.route('/showDemo')
+def demo():
+    newDict = {}
+    with open('Places.txt','r') as lines:
+        for i in lines:
+            k=i.split(',')
+            v=k[2].strip("\n").strip("\r")
+            cord=[k[1],v]
+            newDict[k[0]] = cord
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    place=[]
+    lat=[]
+    lon=[]
+    k=0
+    for i in newDict:
+        place.append(i)
+        lat.append(float(newDict[i][0])) 
+        lon.append(float(newDict[i][1])) 
+    #cursor.callproc('sp_addLoc',('dfsd',12.12,12.1234,))
+    for i in range(0,len(place)):
+        cursor.callproc('sp_addLoc',(place[i],lat[i],lon[i]))
+    cursor.execute("DELETE  FROM Coordinates WHERE Loc_id>36")
+    cursor.execute("SELECT Loc_name FROM Coordinates")
+    data = cursor.fetchall()
+    print data
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return render_template('demo.html',data=data)
 
 @app.route('/userHome')
 def userHome():
