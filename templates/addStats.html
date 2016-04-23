@@ -8,7 +8,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
-
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
     <script src="../static/js/jquery-2.2.1.min.js"></script>
 <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -21,12 +21,23 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="http://mdbootstrap.com/mdbcdn/mdb.min.js"></script>
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+          
     <!-- <link href="../static/addStats.css" rel="stylesheet"> -->
 
 </head>
 
 <body>
-
+   <style >
+            body {
+                background-image: url("../static/background.jpg");
+                font-family: 'Raleway';
+            }
+    </style>
     <div class="container">
         <div class="header">
             <nav>
@@ -37,10 +48,10 @@
                     </li>
                 </ul>
             </nav>
-            <h3 class="text-muted">Localize</h3>
+            <h3 class = "heading" style="color: #000000">Localize</h3>
         </div>
         <section>
-            <form class="form-horizontal" method="post" action="/addStats">
+            <form class="form-horizontal" method="post" action="/addStats" >
                 <fieldset>
 
                     <!-- Form Name -->
@@ -48,20 +59,23 @@
 
                     <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="txtTitle">Water Supply</label>
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Water Supply</label>
                         <div class="col-md-4">
                             <input id="txtTitle" name="inputWater" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true">
                         </div>
                     </div>
-                    <p id = "all-sliders">
-                        <div class="slider">
-                            <input type = "range" min="1" max="10" steps="1" onchange="rangevalue.value=value" name="k">
-                            <output id="rangevalue">5</output>
-                        </div>
-                    </p>    
+                    
+                
+                        <!-- <div class="slider" style="width:300px; margin-left: 200px">
+                            <ul id = "list">
+                                <li><input type = "range" min="1" max="10" steps="1" value = "5" onchange="rangevalue.value=value" name="k"></input></li>
+                                <li><output style ="margin-left:20px">5</output></li>
+                            </ul>
+                        </div>  --> 
+                    
                     <!-- Text input-->
-                    <div class="form-group">
-                        <label class="col-md-4 control-label" for="txtTitle">Electricity</label>
+                    <div class="form-group" >
+                        <label class="col-md-4 control-label" for="txtTitle" style="color:#ffffff">Electricity</label>
                         <div class="col-md-4">
                             <input id="txtTitle" name="inputElectricity" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true">
                         </div>
@@ -69,7 +83,7 @@
 
                     <!-- Textarea -->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="txtPost">Network Availability</label>
+                        <label class="col-md-4 control-label" for="txtPost" style="color: #ffffff">Network Availability</label>
                         <div class="col-md-4">
                             <input id="txtTitle" name="inputNetworkAvailability" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true">
                         </div>
@@ -77,7 +91,7 @@
 
                     <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="txtTitle">Cleanliness</label>
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Cleanliness</label>
                         <div class="col-md-4">
                             <input id="txtTitle" name="inputCleanliness" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true">
                         </div>
@@ -85,7 +99,7 @@
 
                     <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="txtTitle">Green Space</label>
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Green Space</label>
                         <div class="col-md-4">
                             <input id="txtTitle" name="inputGreenSpace" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true">
                         </div>
@@ -93,7 +107,7 @@
 
                     <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="txtTitle">Local Entertainment</label>
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Local Entertainment</label>
                         <div class="col-md-4">
                             <input id="txtTitle" name="inputLocalEntertainment" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true">
                         </div>
@@ -101,7 +115,7 @@
 
                     <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="txtTitle">Nightlife</label>
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Nightlife</label>
                         <div class="col-md-4">
                             <input id="txtTitle" name="inputNighlife" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true">
                         </div>
@@ -109,7 +123,7 @@
 
                     <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="txtTitle">Availability of Repairmen</label>
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Availability of Repairmen</label>
                         <div class="col-md-4">
                             <input id="txtTitle" name="inputRepairmenAvailability" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true">
                         </div>
@@ -117,7 +131,7 @@
 
                     <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="txtTitle">Education</label>
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Education</label>
                         <div class="col-md-4">
                             <input id="txtTitle" name="inputeducation" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true">
                         </div>
@@ -125,7 +139,7 @@
 
                     <!-- Text input-->
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="txtTitle">Neighbourhood</label>
+                        <label class="col-md-4 control-label" for="txtTitle" style="color: #ffffff">Neighbourhood</label>
                         <div class="col-md-4">
                             <input id="txtTitle" name="inputNeighbourhood" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true">
                         </div>
@@ -133,12 +147,12 @@
 
 
                 </fieldset>
-            <input type="submit">Go</input>
+            <button id = "btnID " class="waves-effect waves-light btn" >Submit</a>
             </form>
 
         </section>
         <footer class="footer">
-            <p>&copy; Movie Company 2016</p>
+            <p>&copy; Optio</p>
         </footer>
 
     </div>
