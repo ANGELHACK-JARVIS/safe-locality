@@ -10,6 +10,17 @@
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
 
     <script src="../static/js/jquery-2.2.1.min.js"></script>
+<!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MDB core CSS -->
+    <link href="http://mdbootstrap.com/mdbcdn/mdb.min.css" rel="stylesheet">   
+                                                  
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="http://mdbootstrap.com/mdbcdn/mdb.min.js"></script>
     <!-- <link href="../static/addStats.css" rel="stylesheet"> -->
 
 </head>
@@ -42,7 +53,12 @@
                             <input id="txtTitle" name="inputWater" type="number" value="5" min="0" max="10" step="1" placeholder="" class="form-control input-md" required="true">
                         </div>
                     </div>
-
+                    <p id = "all-sliders">
+                        <div class="slider">
+                            <input type = "range" min="1" max="10" steps="1" onchange="rangevalue.value=value" name="k">
+                            <output id="rangevalue">5</output>
+                        </div>
+                    </p>    
                     <!-- Text input-->
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="txtTitle">Electricity</label>
@@ -117,6 +133,7 @@
 
 
                 </fieldset>
+            <input type="submit">Go</input>
             </form>
 
         </section>
