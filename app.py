@@ -21,8 +21,11 @@ mysql.init_app(app)
 # route to index.html
 @app.route("/")
 def main():
-    return render_template('index.html')
-
+    
+    if(session.get('user')):
+        return render_template('home.html',session = session)
+    else:
+        return render_template('home.html')
 # route to signup.html
 @app.route('/showSignUp')
 def showSignUp():
@@ -82,7 +85,7 @@ def validateLogin():
             if check_password_hash(str(data[0][5]),_password):
                 session['user'] = data[0][0]
                 print "here"
-                return redirect('/dashboard')
+                return render_template('home.html')
             else:
                 return render_template('error.html',error = 'Wrong Email address or Password.')
         else:
@@ -133,33 +136,42 @@ def places(place_name):
         conn = mysql.connect()
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM Coordinates WHERE Loc_name = %s", (place_name))
-        data = cursor.fetchall()
+        data = cursor.fetchall()[0]
         print data
         conn.commit()
         cursor.close()
         conn.close()
-        return render_template('demo.html',data = data)
+        mymap = Map(
+        identifier="view-side",
+        lat=data[2],
+        lng=data[3],
+        markers=[(37.4419, -122.1419)]
+        )
+        
+        lat = data[2]
+        lon = data[3]
+
+        return render_template('demo.html', mymap=mymap,data=data,lat = data[2],lon=data[3])
+        
     else:
         return render_template('error.html',error = 'Unauthorized Access')
-@app.route('/userHome')
+@app.route('/demo')
 def userHome():
     if session.get('user'):
         mymap = Map(
         identifier="view-side",
         lat=37.4419,
         lng=-122.1419,
-        style = "height:600px;width:600px;",
-        markers={'http://maps.google.com/mapfiles/ms/icons/green-dot.png':[(37.4419, -122.1419)],
-                 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png':[(37.4300, -122.1400)]}
-        )
-        return render_template('userHome.html', mymap=mymap)
+        markers=[(37.4419, -122.1419)]
+    )
+        return render_template('demo.html', mymap=mymap)
     else:
         return render_template('error.html',error = 'Unauthorized Access')
 
 @app.route('/logout')
 def logout():
     session.pop('user',None)
-    return redirect('/')
+    return render_template('home.html')
 
 if __name__ == "__main__":
     app.debug = True

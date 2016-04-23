@@ -3,7 +3,8 @@
 
 <head>
     <title>safe Locality</title>
-
+    {{"decoupled-map"|googlemap_js(data[2], data[3], markers=[(data[2], data[3])])}}
+    {{mymap.js}}
 
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -25,7 +26,12 @@
             <h3 class="text-muted">Localize</h3>
         </div>
 
-       {% for x in data %} 
+        <h2> Template filter decoupled with single marker </h2>
+        {{"decoupled-map"|googlemap_html(data[2], data[3])}}
+
+         
+
+       <!--{% for x in data %} 
         <div class="list-group">
         <div class="list-group-item active">
         <div class="row">
@@ -34,7 +40,7 @@
        </div>
         </div>
         </div>
-        {% endfor %}
+        {% endfor %}-->
 
 
 
