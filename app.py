@@ -101,16 +101,10 @@ def userHome():
         identifier="view-side",
         lat=37.4419,
         lng=-122.1419,
+        style = "height:600px;width:600px;",
         markers=[(37.4419, -122.1419)]
         )
-        sndmap = Map(
-            identifier="sndmap",
-            lat=37.4419,
-            lng=-122.1419,
-            markers={'http://maps.google.com/mapfiles/ms/icons/green-dot.png':[(37.4419, -122.1419)],
-                     'http://maps.google.com/mapfiles/ms/icons/blue-dot.png':[(37.4300, -122.1400)]}
-        )
-        return render_template('userHome.html', mymap=mymap, sndmap=sndmap)
+        return render_template('userHome.html', mymap=mymap)
     else:
         return render_template('error.html',error = 'Unauthorized Access')
 
