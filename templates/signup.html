@@ -3,22 +3,32 @@
   <head>
     <title>Localize</title>
 
-
+<!-- 
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
     <link href="../static/signup.css" rel="stylesheet">
     <script src="../static/js/jquery-2.2.1.min.js"></script>
-    <script src="../static/js/signup.js"></script>
+    <script src="../static/js/signup.js"></script> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script src="../static/js/jquery-1.11.2.js"></script>
 
   </head>
 
   <body>
-
+  	<style >
+            body {
+                background-image: url("../static/background.jpg");
+                font-family: 'Raleway';
+            }
+    </style>
     <div class="container">
-      <div class="header">
+      <div class="nav-wrapper">
         <nav>
-          <ul class="nav nav-pills pull-right">
+          <ul class="nav nav-pills right">
             <li role="presentation" ><a href="/">Home</a></li>
             <li role="presentation"><a href="/showSignin">User Sign In</a></li>
             <li role="presentation" class="active"><a href="#">User Sign Up</a></li>
@@ -31,11 +41,11 @@
         <h1>Sign Up!</h1>
         <form class="form-signin">
         <label for="inputName" class="sr-only">Name</label>
-        <input type="name" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
+        <input type="text" name="inputName" id="inputName" class="form-control" placeholder="Name" required autofocus>
         <label for="inputEmail" class="sr-only">First Name</label>
-        <input type="name" name="inputFirstName" id="inputEmail" class="form-control" placeholder="First Name" required autofocus>
+        <input type="text" name="inputFirstName" id="inputEmail" class="form-control" placeholder="First Name" required autofocus>
         <label for="inputEmail" class="sr-only">Last Name</label>
-        <input type="name" name="inputLastName" id="inputEmail" class="form-control" placeholder="Last Name" required autofocus>
+        <input type="text" name="inputLastName" id="inputEmail" class="form-control" placeholder="Last Name" required autofocus>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>

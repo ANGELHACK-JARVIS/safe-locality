@@ -15,7 +15,7 @@ app.secret_key = 'ssh...Big secret!'
 mysql = MySQL()
 
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'utkarsh@mit'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'tekken5'
 app.config['MYSQL_DATABASE_DB'] = 'safelocality'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
@@ -129,7 +129,11 @@ def demo():
     conn.commit()
     cursor.close()
     conn.close()
-    return render_template('dashboard.html', data = data)
+    if(session.get('user')):
+        return render_template('dashboard.html', data = data,session=session)
+    else:
+        return render_template('dashboard.html',data = data)
+
 
 ######################################################################################33
 #This is the review form implementation

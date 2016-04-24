@@ -4,9 +4,3 @@ body {   font-family: 'Raleway', sans-serif;
 	background-image:  url("../static/background.jpg"); 
 }
 
-
-#review-block{
-	border-radius: 10px;
-	border-style:outset;
-	border-width: 5px;
-}

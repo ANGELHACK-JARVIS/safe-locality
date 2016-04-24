@@ -35,21 +35,37 @@
    <style >
             body {
                 background-image: url("../static/background.jpg");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
                 font-family: 'Raleway';
             }
     </style>
     <div class="container">
-        <div class="header">
-            <nav>
-                <ul class="nav nav-pills pull-right">
-                    <li role="presentation" class="active"><a href="#">Add Locale Details</a>
-                    </li>
-                    <li role="presentation"><a href="/logout">Logout</a>
-                    </li>
-                </ul>
-            </nav>
-            <h3 class = "heading" style="color: #000000; margin-top:15px;">Localize</h3>
-        </div>
+        <nav class="navbar default-color">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand waves-effect waves-light" href="/">Home</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                    <ul class="nav navbar-nav">
+                        <li ><a href="/signin" class="waves-effect waves-light">Sign in<span class="sr-only">(current)</span></a></li>
+                        <li><a href="/signUp" class="waves-effect waves-light">Sign Up</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="form-group waves-effect waves-light">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </nav> 
         <section>
             <form class="form-horizontal" method="post" action="/addStats" >
 
