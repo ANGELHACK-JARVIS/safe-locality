@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body >
     <style >
             body {
                 /*background-image: url("http://www.planwallpaper.com/static/images/butterfly-wallpaper.jpeg");*/
@@ -21,7 +21,7 @@
             }
     </style>
 
-    <div class="container" >
+    <div class="container">
         <div class="nav-wrapper">
             <nav>
                 <ul class="nav nav-pills right">
@@ -32,16 +32,43 @@
             <h3 class="text-muted">Localize</h3>
         </div>
 
-        <h2> Template filter decoupled with single marker </h2>
-        {{"decoupled-map"|googlemap_html(data[2], data[3])}}
+        <h2 style="text-align:center;"> Region near and around {{ name }} </h2>
+        <div style="margin-left:200px; margin-bottom:50px;" >{{"decoupled-map"|googlemap_html(data[2], data[3])}}
+        </div>
+        </div>
 
-         
+        <div style="font-size:200%; text-align:center; margin-bottom:30px;">InfoGraphic</div>
+        <div style="margin-left:350px; margin-bottom: 50px;">
+          {{graphs[0].render()|safe}}
+        </div>
+
+        <div style="margin-left:50px; margin-bottom: 50px;">
+          {{graphs[1].render()|safe}}
+        </div>
+        <div id = "review-block" style="padding-left = 20px; margin-left = 50px;">
+            <h5 style="margin-left:50px; size:80%">Username </h5>
+            <h6 style=" margin-left:50px; text-align:left">{{use_fec[0]}}</h6>
+            <h5 style="margin-left:50px; size:80%">Review</h5>
+            <h6 style=" margin-left:50px; text-align:left;font-color:#0000000;padding-bottom:30px;">{{rev_data[2]}}</h6>
+        </div>
+       <!--{% for x in data %}
+        <div class="list-group">
+        <div class="list-group-item active">
+        <div class="row">
+            <div class="col-sm-4"><h4 class="text-left">Place {{loop.index}} :</h4></div>
+            <div class="col-sm-4"><h4>{{x[0]}}</h4></div>
+       </div>
+        </div>
+        </div>
+        {% endfor %}-->
+
+
 
         <footer class="footer">
-            <p>&copy; Company 2015</p>
+            <p>&copy; Optio Company 2016</p>
         </footer>
 
-    </div>
+
 </body>
 
 </html>

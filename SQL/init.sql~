@@ -126,7 +126,7 @@ CREATE PROCEDURE `sp_addStats`(
     IN p_neighbourhood INT
 )
 BEGIN
-    insert into LifeStyle (
+    insert into lifestyle (
         UserId,
         Loc_id,
         Water,

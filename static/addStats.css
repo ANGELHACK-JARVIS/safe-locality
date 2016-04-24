@@ -77,13 +77,3 @@ ul#list {
 ul#list  li{
     display: :inline;
 }
-
-input::-webkit-input-placeholder {
-color: red !important;
-}
-input[type="number"]::-webkit-input-placeholder {
-color: blue !important;
-}
-::-webkit-input-placeholder {
-   color: red;
-}
