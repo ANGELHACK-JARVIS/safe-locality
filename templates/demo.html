@@ -45,11 +45,11 @@
         <div style="margin-left:50px; margin-bottom: 50px;">
           {{graphs[1].render()|safe}}
         </div>
+        <p style="font-size:200%; text-align:center; margin-left:50px;">Resident Reviews:</p>
         <div id = "review-block" style="padding-left = 20px; margin-left = 50px;">
-            <h5 style="margin-left:50px; size:80%">Username </h5>
-            <h6 style=" margin-left:50px; text-align:left">{{use_fec[0]}}</h6>
-            <h5 style="margin-left:50px; size:80%">Review</h5>
-            <h6 style=" margin-left:50px; text-align:left;font-color:#0000000;padding-bottom:30px;">{{rev_data[2]}}</h6>
+          {% for user in use_fec %}
+            <h6 style=" font-size:150%; margin-left:50px; text-align:center;">@{{ user[0] }} says: {{ user[1] }}</h6>
+          {% endfor %}
         </div>
        <!--{% for x in data %}
         <div class="list-group">

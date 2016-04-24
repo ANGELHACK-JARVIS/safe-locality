@@ -15,7 +15,7 @@ app.secret_key = 'ssh...Big secret!'
 mysql = MySQL()
 
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'tekken5'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'utkarsh@mit'
 app.config['MYSQL_DATABASE_DB'] = 'safelocality'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
@@ -220,13 +220,13 @@ def places(place_name):
         conn = mysql.connect()
         cursor = conn.cursor()
         cursor.execute("SELECT * FROM Review where Loc_id = (SELECT Loc_id from Coordinates where Loc_name=%s) ",(place_name))
-        dat = cursor.fetchone()
-        print dat[0]
-        cursor.execute("SELECT UserName from User where UserId = %s",dat[0])
-        use_fec = cursor.fetchone()
-        print use_fec[0]
-        return render_template('demo.html',use_fec=use_fec,rev_data=dat,name=name, mymap=mymap,data=data,lat = data[2],lon=data[3], graphs=graphs,dat=dat)
-
+        dat = cursor.fetchall()
+        use_fec=[]
+        for review in dat:
+            cursor.execute("SELECT UserName from User where UserId = %s", review[0])
+            use_fec.append([cursor.fetchone()[0],review[2]])
+        print use_fec
+        return render_template('demo.html', use_fec=use_fec, rev_data=dat,name=name, mymap=mymap, data=data,lat = data[2], lon=data[3], graphs=graphs,dat=dat)
     else:
         return render_template('error.html',error = 'Unauthorized Access')
 @app.route('/demo')

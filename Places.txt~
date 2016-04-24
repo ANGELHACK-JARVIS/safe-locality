@@ -1,0 +1,4 @@
+delete from Coordinates;
+insert into Coordinates values(Dadar,19.01798,72.844763);
+insert into Coordinates values(Colaba,18.91,72.81);
+insert into Coordinates values(Byculla,18.98,72.835);
